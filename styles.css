@@ -1,0 +1,149 @@
+
+body {
+    color: #eee;
+    background-color: #1a1a1a;
+    overflow-x: hidden;
+}
+
+/* ============================ */
+/*         GLOBAL STYLES        */
+/* ============================ */
+::selection {
+    color: #eee;
+    background-color: #333;
+}
+a {
+    color: blue;
+    text-decoration: none;
+}
+h1 {
+    color: transparent;
+    font-weight: normal;
+    font-size: 18vw;
+    -webkit-text-stroke-color: white;
+    -webkit-text-stroke-width: 0.5vw;
+}
+
+/* ============================ */
+/*            HEADER            */
+/* ============================ */
+.header {
+    display: flex;
+    width: 100vw;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #eee;
+    color: #111;
+}
+.header img {margin-left: 12px;}
+.header h3 {
+    margin-top: -5px;
+    font-size: 45px;
+    font-weight: normal;
+    transition: opacity 0.2s;
+}
+.header a {
+    color: #111;
+}
+
+/* ============================ */
+/*     HEADER-DROPDOWN MENU     */
+/* ============================ */
+.dropdown{
+    position: fixed;
+    right: 20px;
+    top: -16px;
+    margin: 0 auto;
+}
+.dropdown ul{
+    list-style: none;
+    cursor: pointer;
+}
+.dropdown ul li {
+    transition: 0.2s;
+    background-color: #eee;
+    color: #111;
+    width: 170px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    float: left;
+    font-size: 18px;
+    font-weight: normal;
+    position: relative;
+}
+.dropdown ul li:hover{
+    background: #ddd;
+}
+.dropdown ul ul{
+    position: relative;
+    transition: 0.2s;
+    right: 40px;
+    pointer-events: none;
+    opacity: 0%;
+}
+.dropdown ul li:hover > ul{
+    pointer-events: auto;
+    opacity: 100%;
+}
+
+/* ============================ */
+/*             MAIN             */
+/* ============================ */
+.label {
+    padding-top: 10px;
+    margin-left: calc(-50vw + 50%);
+    width: 100vw;
+    position: relative;
+    top: 40px;
+    z-index: -1;
+}
+.label h1 {
+    margin: 0;
+    text-align: center;
+    transition: 0.3s all;
+    animation: ease-in appear 0.5s;
+    pointer-events: none;
+}
+
+.main {
+    font-size: 35px;
+    text-align: center;
+}
+.main > * {
+    margin-top: 200px;
+}
+
+.about {
+    display: flex;
+    width: 100vw;
+    animation: ease-in appear 0.5s;
+}
+.about .image {
+    border: 1px solid #333;
+    flex: 2;
+}
+.about .text {
+    flex: 2;
+    padding-left: 18vw;
+    padding-right: 18vw;
+}
+
+
+@media only screen and (max-width: 960px){
+    .header h3 {opacity: 0;}
+    .dropdown {right: 0;}
+    .main {
+        font-size: 20px;
+        text-align: justify;
+    }
+    h3 {text-align: center;}
+    .about {flex-direction: column-reverse;}
+}
+
+@keyframes appear {
+    from {opacity: 0;}
+    to {opacity: 100;}
+}
